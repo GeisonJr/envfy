@@ -1,0 +1,46 @@
+{
+	"name": "@geisonjr/env",
+	"version": "1.0.0",
+	"author": "GeisonJr",
+	"license": "MIT",
+	"description": "A simple package to manage environment variables",
+	"private": false,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/geisonjr/env.git"
+	},
+	"bugs": {
+		"url": "https://github.com/geisonjr/env/issues"
+	},
+	"scripts": {
+		"build": "npm run script:clean && npm run tsc:build",
+		"lint:check": "prettier --check .",
+		"lint:fix": "prettier --write .",
+		"test": "jest --watchAll",
+		"prepack": "npm run build",
+		"script:clean": "node ./scripts/clean.js",
+		"ts:build": "tsc -p ./tsconfig.json"
+	},
+	"dependencies": {
+		"@geisonjr/typefy": "^1.0.0"
+	},
+	"devDependencies": {
+		"@types/jest": "^29.5.12",
+		"@types/node": "^18.19.18",
+		"jest": "^29.7.0",
+		"prettier": "^3.2.5",
+		"ts-jest": "^29.1.2",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.3.3"
+	},
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"files": [
+		"lib"
+	],
+	"keywords": [
+		"env",
+		"environment",
+		"variables"
+	]
+}
