@@ -12,13 +12,13 @@
 Easy to use, fast and lightweight library for Node.js.
 
 <a>
-	<img src="https://img.shields.io/github/license/geisonjr/env?style=flat" alt="MIT Licence" />
+	<img src="https://img.shields.io/github/license/geisonjr/envfy?style=flat" alt="MIT Licence" />
 </a>
-<a href="https://www.npmjs.com/package/@geisonjr/env">
-	<img src="https://img.shields.io/npm/v/@geisonjr/env?style=flat-square" alt="NPM version" />
+<a href="https://www.npmjs.com/package/@geisonjr/envfy">
+	<img src="https://img.shields.io/npm/v/@geisonjr/envfy?style=flat-square" alt="NPM version" />
 </a>
-<a href="https://www.npmjs.com/package/@geisonjr/env">
-	<img src="https://img.shields.io/npm/dt/@geisonjr/env?style=flat-square" alt="NPM downloads" />
+<a href="https://www.npmjs.com/package/@geisonjr/envfy">
+	<img src="https://img.shields.io/npm/dt/@geisonjr/envfy?style=flat-square" alt="NPM downloads" />
 </a>
 </div>
 
@@ -54,11 +54,11 @@ Use the package manager [npm](https://docs.npmjs.com/),
 [yarn](https://classic.yarnpkg.com/lang/en/docs/).
 
 ```bash
-npm install @geisonjr/env
+npm install @geisonjr/envfy
 ```
 
 ```bash
-yarn add @geisonjr/env
+yarn add @geisonjr/envfy
 ```
 
 ## 📋 Environment Files
@@ -138,7 +138,7 @@ ENV_VAR_BOOLEAN=true // "true", "yes", "y", "1", "on" are considered true
 Import the package in your code and use the environment variables.
 
 ```typescript
-import '@geisonjr/env/config'
+import '@geisonjr/envfy/config'
 
 // Environment variables are now available in process.env
 console.log(process.env.ENV_VAR_STRING) // 'my-value'
@@ -149,7 +149,7 @@ console.log(process.env.ENV_VAR_BOOLEAN) // 'true'
 ### How use the `Env` class
 
 ```typescript
-import Env from '@geisonjr/env'
+import Env from '@geisonjr/envfy'
 
 const env = new Env()
 
@@ -164,7 +164,7 @@ env.boolean('ENV_VAR_BOOLEAN') // true
 ### How use default values
 
 ```typescript
-import Env from '@geisonjr/env'
+import Env from '@geisonjr/envfy'
 
 const env = new Env()
 
@@ -179,7 +179,7 @@ env.number('ENV_VAR_NOT_EXISTS', 456) // 456
 ### How use required values
 
 ```typescript
-import Env from '@geisonjr/env'
+import Env from '@geisonjr/envfy'
 
 const env = new Env({
 	required: boolean, // Default: false
@@ -195,7 +195,7 @@ env.string('ENV_VAR_NOT_EXISTS') // Error: Environment variable 'ENV_VAR_NOT_EXI
 ### How use strict values
 
 ```typescript
-import Env from '@geisonjr/env'
+import Env from '@geisonjr/envfy'
 
 const env = new Env({
 	strict: boolean, // Default: false
@@ -211,4 +211,4 @@ env.number('ENV_VAR_STRING') // Error: Environment variable 'ENV_VAR_STRING' is 
 ## 📋 License
 
 This project is under the
-[MIT License](https://github.com/geisonjr/env/blob/master/LICENSE)
+[MIT License](https://github.com/geisonjr/envfy/blob/master/LICENSE)
