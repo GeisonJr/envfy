@@ -19,7 +19,7 @@
 		"test": "jest --watchAll",
 		"prepack": "npm run build",
 		"script:clean": "node ./scripts/clean.js",
-		"ts:build": "tsc -p ./tsconfig.json"
+		"tsc:build": "tsc -p ./tsconfig.json"
 	},
 	"dependencies": {
 		"@geisonjr/typefy": "^1.0.0"
