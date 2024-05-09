@@ -131,7 +131,7 @@ ENV_VAR_BOOLEAN=true // "true", "yes", "y", "1", "on" are considered true
 >   - Falsy: `false`, `no`, `n`, `0`, `off`.
 > - `number` - Can also use double quotes
 >   - `123`
->   - `123,456.789` or `123 456.789` or `123_456.789`
+>   - `123,456.789`
 > - `string` - Can also use double quotes
 >   - `my-value` or `"my-value"`
 
@@ -141,71 +141,35 @@ Import the package in your code and use the environment variables.
 import '@geisonjr/envfy/config'
 
 // Environment variables are now available in process.env
-console.log(process.env.ENV_VAR_STRING) // 'my-value'
-console.log(process.env.ENV_VAR_NUMBER) // '123'
-console.log(process.env.ENV_VAR_BOOLEAN) // 'true'
+process.env.ENV_VAR_STRING // 'my-value'
+process.env.ENV_VAR_NUMBER // '123'
+process.env.ENV_VAR_BOOLEAN // 'true'
 ```
 
 ### How use the `Env` class
 
 ```typescript
-import Env from '@geisonjr/envfy'
+import * as envfy from '@geisonjr/envfy'
 
-const env = new Env()
-
-// Get value as string
-env.string('ENV_VAR_STRING') // 'my-value'
-// Get value as number
-env.number('ENV_VAR_NUMBER') // 123
 // Get value as boolean
-env.boolean('ENV_VAR_BOOLEAN') // true
+envfy.boolean('ENV_VAR_BOOLEAN') // true
+// Get value as number
+envfy.number('ENV_VAR_NUMBER') // 123
+// Get value as string
+envfy.string('ENV_VAR_STRING') // 'my-value'
 ```
 
 ### How use default values
 
 ```typescript
-import Env from '@geisonjr/envfy'
+import * as envfy from '@geisonjr/envfy'
 
-const env = new Env()
-
-// Get value as string with default
-env.string('ENV_VAR_STRING', 'default-value') // 'my-value'
-env.string('ENV_VAR_NOT_EXISTS', 'default-value') // 'default-value'
-// Get value as number with default
-env.number('ENV_VAR_NUMBER', 456) // 123
-env.number('ENV_VAR_NOT_EXISTS', 456) // 456
-```
-
-### How use required values
-
-```typescript
-import Env from '@geisonjr/envfy'
-
-const env = new Env({
-	required: boolean, // Default: false
-})
-
-// Required "off"
-env.string('ENV_VAR_STRING') // 'my-value'
-
-// Required "on"
-env.string('ENV_VAR_NOT_EXISTS') // Error: Environment variable 'ENV_VAR_NOT_EXISTS' is required
-```
-
-### How use strict values
-
-```typescript
-import Env from '@geisonjr/envfy'
-
-const env = new Env({
-	strict: boolean, // Default: false
-})
-
-// Strict "off"
-env.number('ENV_VAR_STRING') // 0
-
-// Strict "on"
-env.number('ENV_VAR_STRING') // Error: Environment variable 'ENV_VAR_STRING' is not a number
+// Get value as boolean with default value
+envfy.boolean('ENV_VAR_NOT_EXISTS', true) // true
+// Get value as number with default value
+envfy.number('ENV_VAR_NOT_EXISTS', 123.45) // 123.45
+// Get value as string with default value
+envfy.string('ENV_VAR_NOT_EXISTS', 'default-value') // 'default-value'
 ```
 
 ## 📋 License

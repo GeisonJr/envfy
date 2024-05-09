@@ -1,13 +1,9 @@
-import { createEnvs } from '../../src/index'
+import * as envfy from '../../src/index'
+
+envfy.config('./tests/general')
 
 describe('General environment not strict', () => {
-	const envs = createEnvs({
-		config: true,
-		strict: false,
-		path: './tests/general',
-	})
-
 	test('Value without quotes and without spaces', () => {
-		expect(envs.string('VAR_X')).toBe('')
+		expect(envfy.string('VAR_X')).toBe('')
 	})
 })

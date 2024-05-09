@@ -1,6 +1,6 @@
 {
 	"name": "@geisonjr/envfy",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "GeisonJr",
 	"license": "MIT",
 	"description": "A simple package to manage environment variables",
@@ -35,6 +35,15 @@
 	},
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./lib/index.d.ts",
+			"import": "./lib/index.js",
+			"require": "./lib/index.js"
+		},
+		"./config": "./lib/config.js",
+		"./config.js": "./lib/config.js"
+	},
 	"files": [
 		"lib"
 	],
